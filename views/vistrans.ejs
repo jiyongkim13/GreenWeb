@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.slidecontainer {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 23px;
-  height: 24px;
-  border: 0;
-  background-image: url('bus2.png');
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 23px;
-  height: 25px;
-  border: 0;
-  background-image: url('bus2.png');
-  cursor: pointer;
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='/stylesheets/stylevistrans.css' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 </head>
+
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">
+        <h1><b>교통수단으로 보는 지구</b></h1>
+      </div>
+      <div class="col-sm">
+        <h1><b>버스 탄소 배출량</b></h1>
+        <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
+        <div class="slidecontainer">
+          <input type="range" min="0" max="24" value="2" class="slider" id="myRange">
+          <p><b>시간: <span id="demo"></span></b></p>
+        </div></br></br></br>
+        
+        <h1><b>지하철 탄소 배출량</b></h1>
+        <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
+        <div class="slidecontainer">
+          <input type="range" min="0" max="24" value="2" class="slider_train" id="myRange_train">
+          <p><b>시간: <span id="demo_train"></span></b></p>
+        </div>
 
-<h1>버스 탄소 배출량</h1>
-<p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
+      </div>
+    </div>
+  </div>
+  
 
-<div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  <p>시간: <span id="demo"></span></p>
-</div>
+  
 
-<script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+  <script script type="text/javascript" src="../javascripts/vistrans.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script>
 
 </body>
 </html>
