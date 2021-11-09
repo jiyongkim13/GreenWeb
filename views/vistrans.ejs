@@ -4,28 +4,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='/stylesheets/stylevistrans.css' />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
+  <ul id="navbar">
+    <li><a href="/"><b>How Green</b></a></li>
+    <li><a class="active" href="/mbti">MBTI</a></li>
+    <li><a class="active" href="/visfood">Visualize Food</a></li>
+    <li><a class="active" href="/vistrans">Visualize Transportation</a></li>
+  </ul>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm">
-        <h1><b>교통수단으로 보는 지구</b></h1>
+          <div class="box"> 
+            <div id=wavesc> 
+              <div id="wave-01"> </div>
+              <div id="wave-02"> </div>
+              <div id="wave-03"> </div>
+            </div>
+            <div id="h_line"></div>
+          </div>
+          <div class="row">
+            <button class="button-76" role="button" onclick="myFunction()">내 발자국의 크기는?</button>
+          </div>
+          
       </div>
       <div class="col-sm">
-        <h1><b>버스 탄소 배출량</b></h1>
+        <h2><b>버스 탄소 배출량</b></h2>
         <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
         <div class="slidecontainer">
-          <input type="range" min="0" max="24" value="2" class="slider" id="myRange">
+          <input type="range" min="0" max="24" value="2" step = "0.5" class="slider" id="myRange">
           <p><b>시간: <span id="demo"></span></b></p>
-        </div></br></br></br>
+          <p style="text-align:left;"><span id='tree_bus'></span></p>
+        </div></br></br>
+
+        <h2><b>자동차 탄소 배출량</b></h2>
+        <p>하루 평균 이동거리를 스크롤 해주세요.</p>
+        <div class="slidecontainer">  
+          <input type="range" min="0" max="200" value="2" step = "1" class="slider_car" id="myRange_car">
+          <p><b>이동거리 (KM): <span id="demo_car"></span></b></p>
+          <p style="text-align:left;"><span id='tree_car'></span></p>
+        </div></br></br>
         
-        <h1><b>지하철 탄소 배출량</b></h1>
+        <h2><b>지하철 탄소 배출량</b></h2>
         <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
-        <div class="slidecontainer">
-          <input type="range" min="0" max="24" value="2" class="slider_train" id="myRange_train">
+        <div class="slidecontainer">  
+          <input type="range" min="0" max="24" value="2" step = "0.5" class="slider_train" id="myRange_train">
           <p><b>시간: <span id="demo_train"></span></b></p>
-        </div>
+        </div></br></br>
+
+        <h2><b>자전거 탄소 배출량</b></h2>
+        <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
+        <div class="slidecontainer">  
+          <input type="range" min="0" max="24" value="2" step = "0.5" class="slider_bike" id="myRange_bike">
+          <p><b>시간: <span id="demo_bike"></span></b></p>
+        </div></br></br>
+
+        <h2><b>도보 탄소 배출량</b></h2>
+        <p>여러분이 하루 평균 이용 하시는 시간을 스크롤 해주세요.</p>
+        <div class="slidecontainer">  
+          <input type="range" min="0" max="24" value="2" step = "0.5" class="slider_walk" id="myRange_walk">
+          <p><b>시간: <span id="demo_walk"></span></b></p>
+        </div></br></br>
+
+        <h1><b>총 탄소발자국: <span id="footprint"></span> kg CO2 </b></h1>
+
+       
+
 
       </div>
     </div>

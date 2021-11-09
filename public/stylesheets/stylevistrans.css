@@ -1,3 +1,7 @@
+:root {
+  --height-water: 0%;
+}
+
 /* 버스css */
 .slidecontainer {
     width: 100%;
@@ -7,20 +11,16 @@
 .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 100px;
+    height: 100%;
     border-radius: 0;
     background-image: url('../images/road.png');
     background-size: contain;
     background-position: center center;
+    background-repeat: repeat-x;
+    background-color: transparent;
     outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
   }
-  
-.slider:hover {
-    opacity: 1;
-  }
+
   
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -43,6 +43,47 @@
     cursor: pointer;
 }
 
+/* 자동차 css */
+.slidecontainer {
+  width: 100%;
+  font-size: 34px;
+}
+
+.slider_car {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-image: url('../images/road.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: repeat-x;
+  background-color: transparent;
+  outline: none;
+}
+
+
+.slider_car::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  background-image: url('../images/car.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.slider_car::-moz-range-thumb {
+  width: 23px;
+  height: 25px;
+  border: 0;
+  background-image: url('../images/car.png');
+  cursor: pointer;
+}
+
 /* 지하철css */
 .slidecontainer {
   width: 100%;
@@ -57,18 +98,16 @@
   background-image: url('../images/rail.png');
   background-size: contain;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
+  background-color: transparent;
   outline: none;
 }
-
-
 
 .slider_train::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 200px;
   height: 100px;
-  border: 0;
   background-image: url('../images/train.png');
   background-size: contain;
   background-position: center center;
@@ -84,17 +123,236 @@
   cursor: pointer;
 }
 
+/*  자전거 css */
+.slidecontainer {
+  width: 100%;
+  font-size: 34px;
+}
+
+.slider_bike {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-image: url('../images/road.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: repeat-x;
+  background-color: transparent;
+  outline: none;
+}
+
+
+
+.slider_bike::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/bike.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.slider_bike::-moz-range-thumb {
+  width: 23px;
+  height: 25px;
+  border: 0;
+  background-image: url('../images/bike.png');
+  cursor: pointer;
+}
+
+/* 도보 css */
+.slidecontainer {
+  width: 100%;
+  font-size: 34px;
+}
+
+.slider_walk {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-image: url('../images/way.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: repeat-x;
+  background-color: transparent;
+  outline: none;
+}
+
+
+
+.slider_walk::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 100px;
+  background-image: url('../images/walk.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.slider_walk::-moz-range-thumb {
+  width: 23px;
+  height: 25px;
+  border: 0;
+  background-image: url('../images/walk.png');
+  cursor: pointer;
+}
+
 /* css grid 눈에 잘 보이게 하려고 임시적으로 색깔 */
 [class*="container-"]{
-  padding: 1rem;
-  background-color: #53D769 ;
+  padding: 0;
   border: 0;
   text-align: center;
+  background-color: #d9e4f5;
+  background-image: linear-gradient(315deg,#d9e4f5 0%, #f5e3e6 74%);
+  
 }
 
 [class*="col-"]{
   padding: 1rem;
-  background-color: #fecb2e;
   color: #000000 ;
   text-align: center;
+  background-color: transparent ;
+
 }
+
+
+/* 차트 css */
+
+
+.box {
+  position: absolute;
+  top: 60%;
+  left: 26%; 
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 70%;
+  border-radius: 10px; 
+  box-shadow: 0px 0px 5px #000;
+  background: linear-gradient(#f9855d,#fdd288,white);
+  overflow: hidden;
+}
+
+.wavesc-act {
+  position: absolute; 
+  width: 40%;
+  height: 40%;
+  background: transparent;
+  animation: 5s goup ease-out forwards;
+}
+
+.wave-01-act {
+  position: absolute;
+  width: 1000%;
+  height: 1000%; 
+  left: -380%; 
+  top: 159%; 
+  background-color: rgba(0,190,255,0.4);
+  border-radius: 45%; 
+  animation: rotate2 7s ease-out forwards, resize 7s ease-out forwards; 
+}
+
+
+.wave-02-act {
+  position: absolute;
+  width: 1000%;
+  height: 1000%; 
+  left:-380%; 
+  top: 166%; 
+  transform: rotate(55deg);
+  background-color: rgba(0,70,110,0.4);
+  border-radius: 43%; 
+  animation: rotate2 7s ease-out forwards, resize 7s ease-out forwards; 
+}
+
+
+
+.wave-03-act {
+  position: absolute;
+  width: 1000%;
+  height: 1000%; 
+  left: -380%; 
+  top: 169%; 
+  transform: rotate(145deg);
+  background-color: rgba(0,90,110,0.4);
+  border-radius: 40%; 
+  animation: rotate2 7s ease-out forwards; 
+}
+
+
+
+.h_line_new:before {
+  display: block; 
+  position:absolute;
+  top: 84%;
+  width:100%; 
+  opacity: 0;
+  height:20px; 
+  background-color: #ff4e00;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+  color: #fff ;
+  content: "지구인의 평균 탄소발자국";
+  animation: grow 7s ease-out forwards;
+  font-weight: bold;
+}
+
+@keyframes grow {
+  90% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes rotate2 {
+  100% {transform: rotate(360deg)}
+}
+
+@keyframes resize {
+  100% {top: 169%; border-radius: 40%}
+}
+
+@keyframes goup {
+  100% {transform: translateY(var(--height-water))}
+}
+
+
+/* CSS */
+.button-76 {
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  border: 0;
+  border-radius: .25rem;
+  box-sizing:border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  line-height: 1.75rem; /* 28px */
+  padding: 1rem 1.25rem;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.button-76:hover {
+  box-shadow: none;
+}
+
+
+
+@media (min-width: 1024px) {
+  .button-76 {
+    font-size: 1.5rem; /* 24px */
+    padding: 1rem 1.5rem;
+    line-height: 2rem; /* 32px */
+  }
+}
+
