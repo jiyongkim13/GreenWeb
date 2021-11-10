@@ -6,7 +6,7 @@
     "node": "16.6.0"
   },
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
