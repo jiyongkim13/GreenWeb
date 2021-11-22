@@ -18,6 +18,11 @@ router.get('/mbti', function(req, res, next) {
   res.render('mbti');
 });
 
+/* GET MBTI form Page */
+router.get('/form', function(req, res, next) {
+  res.render('form');
+});
+
 /* Router TEST */
 router.get('/test', function(req, res, next) {
   console.log("테스트완료");
